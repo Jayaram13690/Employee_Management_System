@@ -1,0 +1,426 @@
+/* ===== FormEnhancements.css — Advanced CSS Techniques ===== */
+
+/* ===== Floating Labels Implementation ===== */
+
+.form-floating {
+  position: relative;
+  padding-top: 8px;
+}
+
+.form-floating-label {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-size: var(--font-md);
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: left top;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--bg-card) 50%,
+    var(--bg-card) 100%
+  );
+  padding: 0 4px;
+}
+
+.form-floating .form-input:focus ~ .form-floating-label,
+.form-floating .form-input:not(:placeholder-shown) ~ .form-floating-label {
+  top: -10px;
+  font-size: var(--font-xs);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ===== CSS Grid Form Layouts ===== */
+
+.form-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-md);
+}
+
+.form-grid-auto-sm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.form-section-title {
+  grid-column: 1 / -1;
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 2px solid var(--border-light);
+}
+
+/* ===== Glassmorphism Form Containers ===== */
+
+.form-card-glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(124, 58, 237, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.08);
+}
+
+.form-card-glass:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(124, 58, 237, 0.15);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.12);
+}
+
+/* ===== Input Validation Feedback ===== */
+
+.input-validation-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  font-size: 18px;
+}
+
+.input-wrapper-validation {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper-validation .form-input {
+  padding-right: 45px;
+}
+
+/* ===== Form Step Indicator ===== */
+
+.form-steps {
+  display: flex;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.form-step {
+  flex: 1;
+  position: relative;
+  text-align: center;
+}
+
+.form-step-indicator {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--border-light);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0 auto var(--space-sm);
+  transition: var(--transition);
+}
+
+.form-step.active .form-step-indicator {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.form-step.completed .form-step-indicator {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+.form-step-line {
+  position: absolute;
+  top: 20px;
+  left: calc(-50% - var(--space-md));
+  right: calc(50% + var(--space-md));
+  height: 2px;
+  background: var(--border-light);
+  z-index: -1;
+}
+
+.form-step.completed .form-step-line {
+  background: var(--success);
+}
+
+.form-step-label {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.form-step.active .form-step-label {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* ===== Smooth Input Transitions ===== */
+
+.form-input-smooth {
+  transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Contrast Ratios for Accessibility ===== */
+
+/* High contrast text on primary background (7:1 ratio) */
+.form-label-primary {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* High contrast text on danger background (4.5:1 ratio) */
+.form-text-danger {
+  color: var(--danger);
+  font-weight: 500;
+}
+
+/* High contrast text on success background (4.5:1 ratio) */
+.form-text-success {
+  color: var(--success);
+  font-weight: 500;
+}
+
+/* ===== Form Section Dividers ===== */
+
+.form-divider {
+  grid-column: 1 / -1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--border) 50%,
+    transparent 100%
+  );
+  margin: var(--space-md) 0;
+}
+
+.form-divider-label {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin: var(--space-lg) 0;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.form-divider-label::before,
+.form-divider-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--border) 100%
+  );
+}
+
+.form-divider-label::after {
+  background: linear-gradient(
+    to right,
+    var(--border) 0%,
+    transparent 100%
+  );
+}
+
+/* ===== Form Field Groups ===== */
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.form-field-group-title {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Checkbox and Radio Enhancements ===== */
+
+.checkbox-group,
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.checkbox-item,
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.checkbox-item:hover,
+.radio-item:hover {
+  background: var(--primary-light);
+}
+
+.checkbox-item input[type="checkbox"],
+.radio-item input[type="radio"] {
+  accent-color: var(--primary);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.checkbox-item label,
+.radio-item label {
+  flex: 1;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ===== Form Actions / Buttons ===== */
+
+.form-actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end;
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-light);
+  grid-column: 1 / -1;
+}
+
+.form-actions-split {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* ===== Inline Form (Horizontal Layout) ===== */
+
+.form-inline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-md);
+  align-items: end;
+}
+
+.form-inline-full {
+  grid-column: 1 / -1;
+}
+
+/* ===== Loading State for Forms ===== */
+
+.form-loading {
+  position: relative;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.form-loading-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  animation: fadeIn 0.25s ease;
+}
+
+.form-loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* ===== Success State Animation ===== */
+
+.form-success-state {
+  animation: slideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Responsive Form Grids ===== */
+
+@media (max-width: 768px) {
+  .form-grid-auto,
+  .form-grid-auto-sm {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+
+  .form-steps {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .form-step-line {
+    display: none;
+  }
+}
+
+/* ===== Reduced Motion Support ===== */
+
+@media (prefers-reduced-motion: reduce) {
+  .form-floating-label,
+  .form-input-smooth,
+  .form-step-indicator,
+  .form-loading-overlay,
+  .form-success-state {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* ===== Dark Mode Support (Future) ===== */
+
+@media (prefers-color-scheme: dark) {
+  .form-card-glass {
+    background: rgba(30, 27, 75, 0.7);
+    backdrop-filter: blur(10px);
+    border-color: rgba(124, 58, 237, 0.2);
+  }
+
+  .form-floating-label {
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--bg-card) 50%,
+      var(--bg-card) 100%
+    );
+  }
+}

@@ -1,0 +1,319 @@
+/* ===== ComponentsDemo Styling ===== */
+
+.components-demo {
+  min-height: 100vh;
+  background: var(--bg);
+  padding: var(--space-xl);
+}
+
+.demo-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.demo-header h1 {
+  font-size: var(--font-3xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.demo-header p {
+  font-size: var(--font-md);
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.demo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Demo Sections ===== */
+
+.demo-section {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  margin-bottom: var(--space-xl);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+}
+
+.demo-section h2 {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 2px solid var(--primary-light);
+}
+
+.section-description {
+  color: var(--text-muted);
+  font-size: var(--font-sm);
+  margin-bottom: var(--space-lg);
+  font-style: italic;
+}
+
+/* ===== Demo Grid ===== */
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.demo-item {
+  padding: var(--space-lg);
+  background: var(--bg);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.demo-item h3 {
+  font-size: var(--font-md);
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.state-label {
+  margin-top: var(--space-md);
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ===== Info Boxes ===== */
+
+.keyboard-nav-info,
+.features-info {
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-light) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.keyboard-nav-info h4,
+.features-info h4 {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.keyboard-nav-info ul,
+.features-info ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.keyboard-nav-info li,
+.features-info li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+}
+
+.keyboard-nav-info kbd {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.75em;
+  font-weight: 600;
+  font-family: "Courier New", monospace;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Accessibility Checklist ===== */
+
+.accessibility-checklist {
+  margin-top: var(--space-lg);
+}
+
+.accessibility-checklist h3 {
+  font-size: var(--font-md);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.accessibility-checklist ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-md);
+}
+
+.accessibility-checklist li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.accessibility-checklist input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.accessibility-checklist label {
+  cursor: pointer;
+  user-select: none;
+  font-size: var(--font-sm);
+  color: var(--text-primary);
+}
+
+.accessibility-checklist input[type="checkbox"]:checked + label {
+  color: var(--success);
+  font-weight: 600;
+  text-decoration: line-through;
+}
+
+/* ===== Color Palette Grid ===== */
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.color-swatch {
+  text-align: center;
+}
+
+.swatch {
+  width: 100%;
+  height: 100px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.swatch:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.swatch.primary {
+  background: var(--primary);
+}
+
+.swatch.accent {
+  background: var(--accent);
+}
+
+.swatch.success {
+  background: var(--success);
+}
+
+.swatch.warning {
+  background: var(--warning);
+}
+
+.swatch.danger {
+  background: var(--danger);
+}
+
+.swatch.info {
+  background: var(--info);
+}
+
+.color-swatch p {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-xs);
+}
+
+.color-swatch code {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  font-family: "Courier New", monospace;
+}
+
+/* ===== Demo Footer ===== */
+
+.demo-footer {
+  text-align: center;
+  margin-top: var(--space-2xl);
+  padding: var(--space-lg);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.demo-footer p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-sm);
+}
+
+.demo-footer strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* ===== Responsive Design ===== */
+
+@media (max-width: 768px) {
+  .components-demo {
+    padding: var(--space-lg);
+  }
+
+  .demo-section {
+    padding: var(--space-lg);
+  }
+
+  .demo-header h1 {
+    font-size: var(--font-2xl);
+  }
+
+  .demo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .keyboard-nav-info ul,
+  .features-info ul {
+    grid-template-columns: 1fr;
+  }
+
+  .color-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .demo-header h1 {
+    font-size: var(--font-xl);
+  }
+
+  .demo-section h2 {
+    font-size: var(--font-lg);
+  }
+
+  .color-grid {
+    grid-template-columns: 1fr;
+  }
+}
