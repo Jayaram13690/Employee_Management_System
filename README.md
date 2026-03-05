@@ -212,7 +212,7 @@ This project is open source and available under the MIT License.
 
 ## 👥 Author
 
-**Jayaram Jallipalli**
+**Jayaram Bantumilli**
 - GitHub: [@Jayaram13690](https://github.com/Jayaram13690)
 - Email: bantumillijayaram885@gmail.com
 
